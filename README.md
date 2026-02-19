@@ -84,7 +84,7 @@ As credenciais padrão utilizadas são:
 
 ---
 
-## 🔌 Escolhendo o Backend no Frontend
+##  Escolhendo o Backend no Frontend
 
 O frontend pode se conectar a qualquer um dos dois backends. Edite o arquivo:
 
