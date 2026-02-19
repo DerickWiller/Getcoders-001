@@ -1,4 +1,3 @@
-```
 # CRUD de Pessoas — GetCoders
 
 Sistema CRUD completo para gerenciamento de pessoas, desenvolvido como parte do **Programa de Estágio GetCoders**.
@@ -40,7 +39,7 @@ Getcoders001/
 
 ---
 
-## Pre-requisitos
+##  Pré-requisitos
 
 Certifique-se de ter instalado:
 
@@ -58,7 +57,7 @@ Certifique-se de ter instalado:
 
 ---
 
-## Configuracao do Banco de Dados
+##  Configuração do Banco de Dados
 
 Antes de rodar qualquer backend, crie os bancos no PostgreSQL:
 
@@ -85,7 +84,7 @@ As credenciais padrão utilizadas são:
 
 ---
 
-## Escolhendo o Backend no Frontend
+## 🔌 Escolhendo o Backend no Frontend
 
 O frontend pode se conectar a qualquer um dos dois backends. Edite o arquivo:
 
@@ -94,33 +93,33 @@ Frontend/pessoa-frontend/src/app/modules/admin/pessoas/pessoa.service.ts
 ```
 
 ```typescript
-private api = 'http://localhost:8080/pessoas';   // Spring Boot <- ativo
-//private api = 'http://localhost:3000/pessoas'; // NestJS      <- comentado
+private api = 'http://localhost:8080/pessoas';   // Spring Boot ← ativo
+//private api = 'http://localhost:3000/pessoas'; // NestJS      ← comentado
 ```
 
 Basta **comentar uma linha e descomentar a outra** para trocar de backend.
 
 ---
 
-## Opcao 1 — Executar com Script
+## Opção 1 — Executar com Script
 
 Os scripts iniciam o backend e o frontend automaticamente, instalam dependências se necessário e aguardam cada serviço subir antes de continuar.
 
-### Spring Boot + Frontend
+###  Spring Boot + Frontend
 
 ```bash
 cd "Api Spring"
 ./iniciar-app.sh
 ```
 
-### NestJS + Frontend
+###  NestJS + Frontend
 
 ```bash
 cd "Api NEST"
 ./iniciar-app.sh
 ```
 
-### Parar a aplicacao
+###  Parar a aplicação
 
 ```bash
 # Para Spring + Frontend
@@ -136,7 +135,7 @@ cd "Api NEST"
 
 ---
 
-## Opcao 2 — Executar Manualmente
+##  Opção 2 — Executar Manualmente
 
 ### Backend — Spring Boot
 
@@ -247,4 +246,3 @@ tail -f "Api NEST/logs/frontend.log"
 ---
 
 *2026 — Programa de Estágio GetCoders*
-```
