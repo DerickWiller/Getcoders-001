@@ -1,0 +1,25 @@
+# Dependências
+node_modules/
+
+# Build Angular
+Frontend/pessoa-frontend/dist/
+
+# Build Spring Boot
+Api\ Spring/pessoa-api/build/
+Api\ Spring/pessoa-api/.gradle/
+
+# Logs
+Api\ NEST/logs/*.log
+Api\ NEST/logs/*.pid
+Api\ Spring/logs/*.log
+Api\ Spring/logs/*.pid
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
