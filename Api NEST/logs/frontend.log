@@ -1,0 +1,46 @@
+
+> fuse-angular@21.0.0 start
+> ng serve
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         |   1.28 MB | 
+styles.css          | styles                       |   1.23 MB | 
+polyfills.js        | polyfills                    |  90.20 kB | 
+chunk-WY23AYPP.js   | -                            |  12.96 kB | 
+chunk-CBXCD7AK.js   | -                            |   8.80 kB | 
+chunk-52PKROSM.js   | -                            |   1.87 kB | 
+chunk-VUJOFXKG.js   | -                            | 938 bytes | 
+
+                    | Initial total                |   2.63 MB
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-SK2MFYFY.js   | pessoas-routes               |  37.88 kB | 
+chunk-I6DTPIPC.js   | reset-password-routes        |  18.87 kB | 
+chunk-ET2PA676.js   | sign-in-routes               |  18.41 kB | 
+chunk-TJ6WYGK2.js   | sign-up-routes               |  18.03 kB | 
+chunk-WVYR66EL.js   | unlock-session-routes        |  15.73 kB | 
+chunk-GNPYKCWA.js   | -                            |  14.06 kB | 
+chunk-SOUIAKO2.js   | forgot-password-routes       |  13.80 kB | 
+chunk-7MG7ZHD4.js   | confirmation-required-routes |   6.88 kB | 
+chunk-ILSTP3GV.js   | sign-out-routes              |   4.81 kB | 
+chunk-B425IS3K.js   | home-routes                  |   3.47 kB | 
+chunk-ILGYXDXT.js   | example-routes               |   1.52 kB | 
+
+Application bundle generation complete. [7.956 seconds]
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names          | Raw size
+main.js             | main           |  1.28 MB | 
+
+Lazy chunk files    | Names          | Raw size
+chunk-6ZVJRRHZ.js   | pessoas-routes | 37.94 kB | 
+
+Application bundle generation complete. [1.398 seconds]
+
+Page reload sent to client(s).

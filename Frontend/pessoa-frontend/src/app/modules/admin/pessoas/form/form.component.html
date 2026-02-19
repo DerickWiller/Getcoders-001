@@ -1,0 +1,163 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">Admin</a>
+                </div>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <mat-icon
+                        class="icon-size-5 text-secondary"
+                        [svgIcon]="'heroicons_mini:chevron-right'"></mat-icon>
+                    <a class="ml-1 text-primary-500" (click)="cancelar()" style="cursor: pointer;">Pessoas</a>
+                </div>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <mat-icon
+                        class="icon-size-5 text-secondary"
+                        [svgIcon]="'heroicons_mini:chevron-right'"></mat-icon>
+                    <span class="ml-1 text-secondary">{{ isEditMode ? 'Editar' : 'Nova' }}</span>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    {{ isEditMode ? 'Editar Pessoa' : 'Nova Pessoa' }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex flex-auto overflow-hidden">
+        <div class="flex flex-col flex-auto sm:mb-18 overflow-hidden sm:overflow-y-auto">
+            <div class="p-6 sm:p-10">
+                <div class="max-w-3xl">
+                    <form [formGroup]="pessoaForm" class="flex flex-col">
+                        <mat-form-field class="w-full">
+                            <mat-label>CPF</mat-label>
+                            <input
+                                matInput
+                                formControlName="cpf"
+                                placeholder="Digite o CPF (apenas números)"
+                                maxlength="11"
+                                (input)="formatarCPF($event)">
+                            <mat-icon
+                                matPrefix
+                                [svgIcon]="'heroicons_outline:identification'"></mat-icon>
+                            <mat-error *ngIf="pessoaForm.get('cpf').hasError('required')">
+                                CPF é obrigatório
+                            </mat-error>
+                            <mat-error *ngIf="pessoaForm.get('cpf').hasError('pattern')">
+                                CPF deve conter 11 dígitos
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-full mt-4">
+                            <mat-label>Nome</mat-label>
+                            <input
+                                matInput
+                                formControlName="nome"
+                                placeholder="Digite o nome completo">
+                            <mat-icon
+                                matPrefix
+                                [svgIcon]="'heroicons_outline:user'"></mat-icon>
+                            <mat-error *ngIf="pessoaForm.get('nome').hasError('required')">
+                                Nome é obrigatório
+                            </mat-error>
+                            <mat-error *ngIf="pessoaForm.get('nome').hasError('minlength')">
+                                Nome deve ter pelo menos 3 caracteres
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-full mt-4">
+                            <mat-label>Endereço</mat-label>
+                            <input
+                                matInput
+                                formControlName="endereco"
+                                placeholder="Digite o endereço completo">
+                            <mat-icon
+                                matPrefix
+                                [svgIcon]="'heroicons_outline:map-pin'"></mat-icon>
+                            <mat-error *ngIf="pessoaForm.get('endereco').hasError('required')">
+                                Endereço é obrigatório
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-full mt-4">
+                            <mat-label>Telefone</mat-label>
+                            <input
+                                matInput
+                                formControlName="telefone"
+                                placeholder="Digite o telefone (apenas números)"
+                                maxlength="11"
+                                (input)="formatarTelefone($event)">
+                            <mat-icon
+                                matPrefix
+                                [svgIcon]="'heroicons_outline:phone'"></mat-icon>
+                            <mat-error *ngIf="pessoaForm.get('telefone').hasError('required')">
+                                Telefone é obrigatório
+                            </mat-error>
+                            <mat-error *ngIf="pessoaForm.get('telefone').hasError('pattern')">
+                                Telefone deve ter 10 ou 11 dígitos
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-full mt-4">
+                            <mat-label>Data de Nascimento</mat-label>
+                            <input
+                                matInput
+                                [matDatepicker]="picker"
+                                formControlName="dataNascimento"
+                                placeholder="Selecione a data">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-icon
+                                matPrefix
+                                [svgIcon]="'heroicons_outline:calendar'"></mat-icon>
+                            <mat-error *ngIf="pessoaForm.get('dataNascimento').hasError('required')">
+                                Data de Nascimento é obrigatória
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-full mt-4">
+                            <mat-label>Escolaridade</mat-label>
+                            <mat-select formControlName="escolaridade" placeholder="Selecione a escolaridade">
+                                <mat-option *ngFor="let esc of escolaridades" [value]="esc">
+                                    {{ esc }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-icon
+                                matPrefix
+                                [svgIcon]="'heroicons_outline:academic-cap'"></mat-icon>
+                            <mat-error *ngIf="pessoaForm.get('escolaridade').hasError('required')">
+                                Escolaridade é obrigatória
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- Actions -->
+                        <div class="flex items-center justify-end mt-8 border-t pt-6">
+                            <button
+                                mat-button
+                                type="button"
+                                (click)="cancelar()">
+                                Cancelar
+                            </button>
+                            <button
+                                class="ml-4"
+                                mat-flat-button
+                                type="button"
+                                [color]="'primary'"
+                                [disabled]="pessoaForm.invalid"
+                                (click)="salvar()">
+                                {{ isEditMode ? 'Atualizar' : 'Salvar' }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
