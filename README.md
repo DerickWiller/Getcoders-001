@@ -1,3 +1,4 @@
+```
 # CRUD de Pessoas — GetCoders
 
 Sistema CRUD completo para gerenciamento de pessoas, desenvolvido como parte do **Programa de Estágio GetCoders**.
@@ -6,7 +7,7 @@ Permite cadastrar, listar, buscar, atualizar e deletar pessoas usando duas stack
 
 ---
 
-## 📁 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```
 Getcoders001/
@@ -28,7 +29,7 @@ Getcoders001/
 
 ---
 
-## 🧩 Tecnologias
+## Tecnologias
 
 | Camada        | Tecnologia |
 |---------------|---|
@@ -39,7 +40,7 @@ Getcoders001/
 
 ---
 
-## ⚙️ Pré-requisitos
+## Pre-requisitos
 
 Certifique-se de ter instalado:
 
@@ -57,7 +58,7 @@ Certifique-se de ter instalado:
 
 ---
 
-## 🗄️ Configuração do Banco de Dados
+## Configuracao do Banco de Dados
 
 Antes de rodar qualquer backend, crie os bancos no PostgreSQL:
 
@@ -84,7 +85,7 @@ As credenciais padrão utilizadas são:
 
 ---
 
-## 🔌 Escolhendo o Backend no Frontend
+## Escolhendo o Backend no Frontend
 
 O frontend pode se conectar a qualquer um dos dois backends. Edite o arquivo:
 
@@ -93,33 +94,33 @@ Frontend/pessoa-frontend/src/app/modules/admin/pessoas/pessoa.service.ts
 ```
 
 ```typescript
-private api = 'http://localhost:8080/pessoas';   // Spring Boot ← ativo
-//private api = 'http://localhost:3000/pessoas'; // NestJS      ← comentado
+private api = 'http://localhost:8080/pessoas';   // Spring Boot <- ativo
+//private api = 'http://localhost:3000/pessoas'; // NestJS      <- comentado
 ```
 
 Basta **comentar uma linha e descomentar a outra** para trocar de backend.
 
 ---
 
-## Opção 1 — Executar com Script 
+## Opcao 1 — Executar com Script
 
 Os scripts iniciam o backend e o frontend automaticamente, instalam dependências se necessário e aguardam cada serviço subir antes de continuar.
 
-### ▶️ Spring Boot + Frontend
+### Spring Boot + Frontend
 
 ```bash
 cd "Api Spring"
 ./iniciar-app.sh
 ```
 
-### ▶️ NestJS + Frontend
+### NestJS + Frontend
 
 ```bash
 cd "Api NEST"
 ./iniciar-app.sh
 ```
 
-### ⏹️ Parar a aplicação
+### Parar a aplicacao
 
 ```bash
 # Para Spring + Frontend
@@ -135,7 +136,7 @@ cd "Api NEST"
 
 ---
 
-## 🛠️ Opção 2 — Executar Manualmente
+## Opcao 2 — Executar Manualmente
 
 ### Backend — Spring Boot
 
@@ -189,7 +190,7 @@ Frontend disponível em: `http://localhost:4200`
 
 ---
 
-## 📋 Endpoints da API
+## Endpoints da API
 
 Ambos os backends expõem os mesmos endpoints:
 
@@ -216,7 +217,7 @@ Ambos os backends expõem os mesmos endpoints:
 
 ---
 
-## 📝 Logs
+## Logs
 
 Os logs ficam salvos dentro da pasta `logs/` de cada API:
 
@@ -232,7 +233,7 @@ tail -f "Api NEST/logs/frontend.log"
 
 ---
 
-## 🗂️ Entidade Pessoa
+## Entidade Pessoa
 
 | Campo | Tipo | Descrição |
 |---|---|---|
@@ -246,3 +247,4 @@ tail -f "Api NEST/logs/frontend.log"
 ---
 
 *2026 — Programa de Estágio GetCoders*
+```
